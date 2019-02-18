@@ -302,6 +302,7 @@ xQueueHandle xReturn = NULL;
 		pxNewQueue = ( xQUEUE * ) os_malloc_iram( sizeof( xQUEUE ) );
 		if( pxNewQueue != NULL )
 		{
+			QHeapMemSetName(pxNewQueue,"Queue"); //add by karlno
 			/* Create the list of pointers to queue items.  The queue is one byte
 			longer than asked for to make wrap checking easier/faster. */
 			xQueueSizeInBytes = ( size_t ) ( uxQueueLength * uxItemSize ) + ( size_t ) 1; /*lint !e961 MISRA exception as the casts are only redundant for some ports. */
@@ -309,6 +310,7 @@ xQueueHandle xReturn = NULL;
 			pxNewQueue->pcHead = ( signed char * ) os_malloc_iram( xQueueSizeInBytes );
 			if( pxNewQueue->pcHead != NULL )
 			{
+				QHeapMemSetName(pxNewQueue->pcHead,"QueueHd"); //add by karlno
 				/* Initialise the queue members as described above where the
 				queue type is defined. */
 				pxNewQueue->uxLength = uxQueueLength;

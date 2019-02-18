@@ -77,28 +77,28 @@
  * See http://www.freertos.org/a00110.html.
  *----------------------------------------------------------*/
 
-#define configUSE_PREEMPTION		1
-#define configUSE_IDLE_HOOK			1
-#define configUSE_TICK_HOOK			0
+#define configUSE_PREEMPTION		1 //设为 1则采用抢占式调度器, 设为 0则采用协作式调度器。
+#define configUSE_IDLE_HOOK			1//是否启用空闲任务钩子函数
+#define configUSE_TICK_HOOK			0//设为1则使能 tick hook，设为0则禁止tick hook。
 #define configUSE_TICKLESS_IDLE 	1
-#define configCPU_CLOCK_HZ			( ( unsigned long ) 80000000 )	
-#define configTICK_RATE_HZ			( ( portTickType ) 100 )
-#define configMAX_PRIORITIES		( ( unsigned portBASE_TYPE ) 15 )
-#define configMINIMAL_STACK_SIZE	( ( unsigned short )176 )	
+#define configCPU_CLOCK_HZ			( ( unsigned long ) 80000000 )//cpu工作频率	
+#define configTICK_RATE_HZ			( ( portTickType ) 100 )//一秒中的时间片个数
+#define configMAX_PRIORITIES		( ( unsigned portBASE_TYPE ) 15 )//最大优先级，无上限，越小越好，可供用户使用的优先级为1-9
+#define configMINIMAL_STACK_SIZE	( ( unsigned short )176 )	//idle的堆栈大小
 //#define configTOTAL_HEAP_SIZE		( ( size_t ) ( 17 * 1024 ) )
 #define configMAX_TASK_NAME_LEN		( 16 )
-#define configUSE_TRACE_FACILITY	0
-#define configUSE_STATS_FORMATTING_FUNCTIONS 0
+#define configUSE_TRACE_FACILITY	0//是否开启trace功能
+#define configUSE_STATS_FORMATTING_FUNCTIONS 0//开启统计函数功能
 #define configUSE_16_BIT_TICKS		0
 #define configIDLE_SHOULD_YIELD		1
 
 #define INCLUDE_xTaskGetIdleTaskHandle 1
 #define INCLUDE_xTimerGetTimerDaemonTaskHandle 1
 
-#define configCHECK_FOR_STACK_OVERFLOW  2
-#define configUSE_MUTEXES  1
-#define configUSE_RECURSIVE_MUTEXES  1
-#define configUSE_COUNTING_SEMAPHORES   1
+#define configCHECK_FOR_STACK_OVERFLOW  2 //检查堆栈溢出
+#define configUSE_MUTEXES 1//设为 1 则程序中会包含mutex 相关的代码，设为 0 则忽略相关的代码。
+#define configUSE_RECURSIVE_MUTEXES  1//设置为1,将使用递归互斥功能;设置为0,将不使用
+#define configUSE_COUNTING_SEMAPHORES   1//是否用计数式的SEMAPHORES
 #define configUSE_TIMERS    1
 
 #if configUSE_TIMERS
@@ -108,8 +108,8 @@
 #endif
 
 /* Co-routine definitions. */
-#define configUSE_CO_ROUTINES 		0
-#define configMAX_CO_ROUTINE_PRIORITIES ( 2 )
+#define configUSE_CO_ROUTINES 		0 //设置为1则包含co-routines 功能，如果包含了co-routines功能，则编译时需包含croutine.c 文件
+#define configMAX_CO_ROUTINE_PRIORITIES ( 2 ) //co-routines 可以使用的优先级的数量。
 
 /* Set the following definitions to 1 to include the API function, or zero
 to exclude the API function. */
