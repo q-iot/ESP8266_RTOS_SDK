@@ -676,6 +676,7 @@ prvCheckForValidListAndQueue( void )
 			pxCurrentTimerList = &xActiveTimerList1;
 			pxOverflowTimerList = &xActiveTimerList2;
 			xTimerQueue = xQueueCreate( ( unsigned portBASE_TYPE ) configTIMER_QUEUE_LENGTH, sizeof( xTIMER_MESSAGE ) );
+			QHeapMemSetName(xTimerQueue,"TimerQ"); //add by karlno
 		}
 	}
 	taskEXIT_CRITICAL();

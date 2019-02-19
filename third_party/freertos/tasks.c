@@ -496,6 +496,9 @@ tskTCB * pxNewTCB;
 	{
 		portSTACK_TYPE *pxTopOfStack;
 
+		QHeapMemSetName(pxNewTCB,pcName); //add by karlno
+		QHeapMemSetName(pxNewTCB->pxStack,pcName); //add by karlno
+		
 		#if( portUSING_MPU_WRAPPERS == 1 )
 			/* Should the task be created in privileged mode? */
 			portBASE_TYPE xRunPrivileged;

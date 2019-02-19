@@ -464,6 +464,10 @@
    ---------- Debugging options ----------
    ---------------------------------------
 */
+
+#define LWIP_DEBUG                    	 LWIP_DBG_OFF	 //add by karlno
+
+
 /**
  * ETHARP_DEBUG: Enable debugging in etharp.c.
  */
@@ -513,5 +517,9 @@
  * DHCP_DEBUG: Enable debugging in dhcp.c.
  */
 #define DHCP_DEBUG                      LWIP_DBG_OFF
+
+//add by karlno
+#define ChIpAddr(Addr1,Addr2,Addr3,Addr4) (((Addr4)<<24)+((Addr3)<<16)+((Addr2)<<8)+(Addr1)) //组合ip地址到一个数
+#define DipIpAddr(x) ((x)&0xff),(((x)>>8)&0xff),(((x)>>16)&0xff),(((x)>>24)&0xff) //分开ip方便显示
 
 #endif /* __LWIPOPTS_H__ */

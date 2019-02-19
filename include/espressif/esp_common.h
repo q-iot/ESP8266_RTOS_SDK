@@ -107,5 +107,15 @@
 #include "smartconfig.h"
 #include "spi_flash.h"
 #include "pwm.h"
+#include "uart.h" //add by karlno
+#include "gpio.h" //add by karlno
+#include "pwm.h" //add by karlno
+#include "i2c_master.h" //add by karlno
+
+#if 1//add by karlno
+#define ETS_GPIO_INTR_ENABLE()  _xt_isr_unmask(1 << ETS_GPIO_INUM)  //ENABLE INTERRUPTS
+#define ETS_GPIO_INTR_DISABLE() _xt_isr_mask(1 << ETS_GPIO_INUM)    //DISABLE INTERRUPTS
+#endif
+
 
 #endif
