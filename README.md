@@ -15,7 +15,7 @@ More details in "Wiki" !
 You can use both xcc and gcc to compile your project, gcc is recommended.
 For gcc, please refer to [esp-open-sdk](https://github.com/pfalcon/esp-open-sdk).
 
-  
+
 ## Compile ##
 
 Clone ESP8266_RTOS_SDK, e.g., to ~/ESP8266_RTOS_SDK.
