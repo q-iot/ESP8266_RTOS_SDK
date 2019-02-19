@@ -286,7 +286,7 @@ ifeq ($(app), 0)
 	@echo "No boot needed."
 	@echo "Generate eagle.flash.bin and eagle.irom0text.bin successully in BIN_PATH"
 	@echo "eagle.flash.bin-------->0x00000"
-	@echo "eagle.irom0text.bin---->0x20000"
+	@echo "eagle.irom0text.bin---->0x40000"
 else
 	@echo "BIN_PATH: $(BIN_PATH)/upgrade"
 	@echo ""
